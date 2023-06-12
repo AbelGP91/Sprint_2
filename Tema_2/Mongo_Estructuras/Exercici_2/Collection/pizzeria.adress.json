@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "64830414281f48f19c688d19"
+  },
+  "id_adress": 1,
+  "id_client": {
+    "$oid": "648302b2281f48f19c688d17"
+  },
+  "carrer_adress": "Imaginario 1",
+  "num_adress": 111,
+  "cp_adress": "08292",
+  "localitat_adress": "Esparreguera",
+  "provincia_adress": "Barcelona"
+},
+{
+  "_id": {
+    "$oid": "64830414281f48f19c688d1a"
+  },
+  "id_adress": 2,
+  "id_botiga": {
+    "$oid": "6486cdaf42f98ca4295d7b1d"
+  },
+  "carrer_adress": "Imaginario 2",
+  "num_adress": 222,
+  "cp_adress": "08292",
+  "localitat_adress": "Esparreguera",
+  "provincia_adress": "Barcelona"
+}]

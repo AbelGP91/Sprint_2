@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "6486cd6842f98ca4295d7b15"
+  },
+  "id_comanda": 1,
+  "id_client": {
+    "$oid": "648302b2281f48f19c688d17"
+  },
+  "id_botiga": {
+    "$oid": "6486cdaf42f98ca4295d7b1d"
+  },
+  "nom_botiga": "Come y Calla",
+  "date_comanda": "12/06/23",
+  "tipus_comanda": "Domicili",
+  "pizzes_comanda": 0,
+  "hamburgueses_comanda": 2,
+  "begudes_comanda": 2,
+  "preu_comanda": 22.46,
+  "data_repartiment": "12/06/23 - 22:15",
+  "id_empleat": {
+    "$oid": "6486d45342f98ca4295d7b55"
+  },
+  "productos": [
+    {
+      "id_producto": {
+        "$oid": "6486cf4742f98ca4295d7b25"
+      }
+    },
+    {
+      "id_producto": {
+        "$oid": "6486cf4742f98ca4295d7b26"
+      }
+    },
+    {
+      "id_producto": {
+        "$oid": "6486cf4742f98ca4295d7b27"
+      }
+    },
+    {
+      "id_producto": {
+        "$oid": "6486cf4742f98ca4295d7b27"
+      }
+    }
+  ]
+}]

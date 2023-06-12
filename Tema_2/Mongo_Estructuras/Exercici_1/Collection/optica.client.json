@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "64805b03a8a3e6cf694f7ed1"
+  },
+  "id_client": 1,
+  "nom_client": "Abel",
+  "cognom1_client": "Galindo",
+  "cognom2_client": "Pascual",
+  "telf_client": 627297900,
+  "email_client": "abel@hotmail.es",
+  "Data_client": "07/06/23"
+},
+{
+  "_id": {
+    "$oid": "64805b03a8a3e6cf694f7ed2"
+  },
+  "id_client": 2,
+  "nom_client": "Juan",
+  "cognom1_client": "Polla",
+  "cognom2_client": "Sucia",
+  "telf_client": 627297901,
+  "email_client": "jps@hotmail.es",
+  "Data_client": "07/06/23"
+},
+{
+  "_id": {
+    "$oid": "64805b03a8a3e6cf694f7ed3"
+  },
+  "id_client": 3,
+  "id_recomendado": {
+    "$oid": "64805b03a8a3e6cf694f7ed1"
+  },
+  "nom_client": "Juan",
+  "cognom1_client": "Polla",
+  "cognom2_client": "Limpia",
+  "telf_client": 627297902,
+  "email_client": "jpl@hotmail.es",
+  "Data_client": "07/06/23"
+}]

@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "64803dd1a8a3e6cf694f7eb1"
+  },
+  "id_proveidor": 1,
+  "nom_proveidor": "Optica Juan",
+  "telf_proveidor": 677711830,
+  "fax_proveidor": 0,
+  "nif_proveidor": "46792494Y"
+},
+{
+  "_id": {
+    "$oid": "64803dd1a8a3e6cf694f7eb2"
+  },
+  "id_proveidor": 2,
+  "nom_proveidor": "Gafas Benito",
+  "telf_proveidor": 627297900,
+  "fax_proveidor": 0,
+  "nif_proveidor": "46792494X"
+},
+{
+  "_id": {
+    "$oid": "64803dd1a8a3e6cf694f7eb3"
+  },
+  "id_proveidor": 3,
+  "nom_proveidor": "No veo un pijo",
+  "telf_proveidor": 655309310,
+  "fax_proveidor": 0,
+  "nif_proveidor": "46792494Z"
+}]

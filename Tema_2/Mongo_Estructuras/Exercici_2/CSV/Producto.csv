@@ -1,0 +1,7 @@
+id_producto,categoria_producte,nom_producte,descripcio_producte,img_producte,preu_producte
+1,Mitjana,Pizza Margarita,Clásica,,11.99
+2,Familiar,Pizza Carbonara,Contiene huevo,,14.99
+3,,Hamburguesa BBQ,La de siempre,,9.49
+4,,Hamburguesa Dallas,Con huevo y mostaza,,9.99
+5,,CocaCola,,,1.49
+6,,Pepsi,,,1.49

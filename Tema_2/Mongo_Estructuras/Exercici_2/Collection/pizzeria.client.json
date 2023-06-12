@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "648302b2281f48f19c688d17"
+  },
+  "id_client": 1,
+  "nom_client": "Abel",
+  "cognom1_client": "Galindo",
+  "cognom2_client": "Pascual",
+  "telf_client": 627297900
+}]

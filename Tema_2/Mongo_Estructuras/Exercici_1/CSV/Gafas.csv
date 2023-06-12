@@ -1,0 +1,4 @@
+id_gafas,marca_gafas,graduacio1_gafas,graduacio2_gafas,montura_gafas,color1_gafas,color2_gafas,precio_gafas,id_proveidor,nom_proveidor
+1,Northweek,1,1,Flotant,Negre,Negre,14.99,1,Optica Juan
+2,DCSquared,1,2,Pasta,Blau,Blau,49.99,1,Optica Juan
+3,Rayban,2,1,Metalica,Plata,Plata,119.99,3,No veo un pijo

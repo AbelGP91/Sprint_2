@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "64805927a8a3e6cf694f7ec7"
+  },
+  "id_adress": 1,
+  "id_proveidor": {
+    "$oid": "64803dd1a8a3e6cf694f7eb1"
+  },
+  "carrer_adress": "Imaginario 1",
+  "num_adress": 111,
+  "ciutat_adress": "Bcn",
+  "cp_adress": 8292,
+  "pais_adress": "Spain"
+},
+{
+  "_id": {
+    "$oid": "64805927a8a3e6cf694f7ec8"
+  },
+  "id_adress": 2,
+  "id_proveidor": {
+    "$oid": "64803dd1a8a3e6cf694f7eb2"
+  },
+  "carrer_adress": "Imaginario 2",
+  "num_adress": 112,
+  "ciutat_adress": "Bcn",
+  "cp_adress": 8292,
+  "pais_adress": "Spain"
+},
+{
+  "_id": {
+    "$oid": "64805927a8a3e6cf694f7ec9"
+  },
+  "id_adress": 3,
+  "id_proveidor": {
+    "$oid": "64803dd1a8a3e6cf694f7eb3"
+  },
+  "carrer_adress": "Imaginario 3",
+  "num_adress": 121,
+  "ciutat_adress": "Bcn",
+  "cp_adress": 8292,
+  "pais_adress": "Spain"
+},
+{
+  "_id": {
+    "$oid": "64805927a8a3e6cf694f7eca"
+  },
+  "id_adress": 4,
+  "id_client": {
+    "$oid": "64805b03a8a3e6cf694f7ed1"
+  },
+  "carrer_adress": "Imaginario 4",
+  "num_adress": 211,
+  "ciutat_adress": "Bcn",
+  "cp_adress": 8292,
+  "pais_adress": "Spain"
+},
+{
+  "_id": {
+    "$oid": "64805927a8a3e6cf694f7ecb"
+  },
+  "id_adress": 5,
+  "id_client": {
+    "$oid": "64805b03a8a3e6cf694f7ed2"
+  },
+  "carrer_adress": "Imaginario 5",
+  "num_adress": 122,
+  "ciutat_adress": "Bcn",
+  "cp_adress": 8292,
+  "pais_adress": "Spain"
+},
+{
+  "_id": {
+    "$oid": "64805927a8a3e6cf694f7ecc"
+  },
+  "id_adress": 6,
+  "id_client": {
+    "$oid": "64805b03a8a3e6cf694f7ed3"
+  },
+  "carrer_adress": "Imaginario 6",
+  "num_adress": 212,
+  "ciutat_adress": "Bcn",
+  "cp_adress": 8292,
+  "pais_adress": "Spain"
+}]

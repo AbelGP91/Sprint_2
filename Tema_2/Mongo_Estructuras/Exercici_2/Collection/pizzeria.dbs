@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MongoDb" id="Project-1cb9" database="MongoDb" >
+	<schema name="pizzeria" >
+		<table name="adress" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_adress" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="id_client" type="objectId" length="800" decimal="0" jt="-8" />
+			<column name="carrer_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="num_adress" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="cp_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="localitat_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="provincia_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="id_botiga" type="objectId" length="800" decimal="0" jt="-8" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="pizzeria" to_table="client" >
+				<fk_column name="id_client" pk="_id" />
+			</fk>
+		</table>
+		<table name="client" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_client" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="nom_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cognom1_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cognom2_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="telf_client" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+		</table>
+		<table name="comanda" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_comanda" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="id_client" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_botiga" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="nom_botiga" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="date_comanda" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="tipus_comanda" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="pizzes_comanda" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="hamburgueses_comanda" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="begudes_comanda" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="preu_comanda" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			<column name="data_repartiment" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="id_empleat" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="productos" type="array[object]" length="800" decimal="0" jt="4999545" mandatory="y" >
+				<column name="id_producto" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			</column>
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="pizzeria" to_table="client" >
+				<fk_column name="id_client" pk="_id" />
+			</fk>
+			<fk name="Relationship" virtual="y" to_schema="pizzeria" to_table="empleat" >
+				<fk_column name="id_empleat" pk="_id" />
+			</fk>
+			<fk name="Relationship" virtual="y" to_schema="pizzeria" to_table="producto" >
+				<fk_column name="productos.id_producto" pk="_id" />
+			</fk>
+		</table>
+		<table name="empleat" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_empleat" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="id_botiga" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="nom_empleat" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cognom1_empleat" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cognom2_empleat" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="nif_empleat" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="telf_empleat" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="tipus_empleat" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+		</table>
+		<table name="producto" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_producto" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="categoria_producte" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="nom_producte" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="descripcio_producte" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="img_producte" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="preu_producte" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+		</table>
+	</schema>
+	<connector name="MongoDb" database="MongoDb" driver_class="com.wisecoders.dbschema.mongodb.JdbcDriver" driver_jar="mongojdbc4.8.1.jar" driver_desc="No Authentication" host="localhost" port="27017" instance="pizzeria" user="admin" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-12bc" show_relation="name" >
+		<entity schema="pizzeria" name="adress" color="BED3F4" x="656" y="608" />
+		<entity schema="pizzeria" name="client" color="D1BEF4" x="656" y="80" />
+		<entity schema="pizzeria" name="comanda" color="BEBEF4" x="336" y="80" />
+		<entity schema="pizzeria" name="empleat" color="C7F4BE" x="336" y="608" />
+		<entity schema="pizzeria" name="producto" color="F4DDBE" x="48" y="608" />
+		<entity schema="pizzeria" name="comanda" column="productos" color="BEBEF4" x="384" y="432" />
+		<group name="Collection &#039;adress&#039;" color="ECF0F7" >
+			<entity schema="pizzeria" name="adress" />
+		</group>
+		<group name="Collection &#039;empleat&#039;" color="EEF7EC" >
+			<entity schema="pizzeria" name="empleat" />
+		</group>
+		<group name="Collection &#039;producto&#039;" color="F7F2EC" >
+			<entity schema="pizzeria" name="producto" />
+		</group>
+		<group name="Collection &#039;client&#039;" color="F0ECF7" >
+			<entity schema="pizzeria" name="client" />
+		</group>
+		<group name="Collection &#039;productos&#039;" color="ECECF7" >
+			<entity schema="pizzeria" name="comanda" />
+			<entity schema="pizzeria" name="comanda" column="productos" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-25e5" show_column_type="y" show_relation="name" >
+		<entity schema="pizzeria" name="adress" color="BED3F4" x="704" y="608" />
+		<entity schema="pizzeria" name="client" color="D1BEF4" x="704" y="80" />
+		<entity schema="pizzeria" name="comanda" color="BEBEF4" x="368" y="80" />
+		<entity schema="pizzeria" name="empleat" color="C7F4BE" x="368" y="608" />
+		<entity schema="pizzeria" name="producto" color="F4DDBE" x="48" y="608" />
+		<entity schema="pizzeria" name="comanda" column="productos" color="BEBEF4" x="400" y="400" />
+		<group name="adress" color="ECF0F7" >
+			<entity schema="pizzeria" name="adress" />
+		</group>
+		<group name="empleat" color="EEF7EC" >
+			<entity schema="pizzeria" name="empleat" />
+		</group>
+		<group name="producto" color="F7F2EC" >
+			<entity schema="pizzeria" name="producto" />
+		</group>
+		<group name="client" color="F0ECF7" >
+			<entity schema="pizzeria" name="client" />
+		</group>
+		<group name="productos" color="ECECF7" >
+			<entity schema="pizzeria" name="comanda" column="productos" />
+			<entity schema="pizzeria" name="comanda" />
+		</group>
+		<script name="Query Editor" id="Editor-1605" language="SQL" >
+			<string><![CDATA[pizzeria.comanda.find()
+
+//OR
+
+USE pizzeria;
+db.comanda.find()
+
+//OR
+
+USE pizzeria;
+db.getCollection('comanda').find()]]></string>
+		</script>
+		<browser id="Browse-644" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="pizzeria" entity="comanda" x="20" y="20" width="400" height="300" record_view="y" >
+				<browse_table schema="pizzeria" entity="client" fk="Relationship" x="440" y="20" width="500" height="350" record_view="y" >
+					<browse_table schema="pizzeria" entity="adress" fk="Relationship" x="960" y="20" width="500" height="350" record_view="y" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-1051" name="Query Builder" >
+			<query_table schema="pizzeria" name="comanda" alias="comanda" x="48" y="48" >
+				<column name="_id" />
+				<column name="id_comanda" />
+				<column name="id_client" />
+				<column name="id_botiga" />
+				<column name="nom_botiga" />
+				<column name="date_comanda" />
+				<column name="tipus_comanda" />
+				<column name="pizzes_comanda" />
+				<column name="hamburgueses_comanda" />
+				<column name="begudes_comanda" />
+				<column name="preu_comanda" />
+				<column name="data_repartiment" />
+				<column name="id_empleat" />
+				<column name="productos" />
+				<query_table schema="pizzeria" name="client" alias="client" x="336" y="48" fk="Relationship" type="Inner Join" >
+					<column name="_id" />
+					<column name="id_client" />
+					<column name="nom_client" />
+					<column name="cognom1_client" />
+					<column name="cognom2_client" />
+					<column name="telf_client" />
+					<query_table schema="pizzeria" name="adress" alias="adress" x="560" y="48" fk="Relationship" type="Inner Join" >
+						<column name="_id" />
+						<column name="id_adress" />
+						<column name="id_client" />
+						<column name="carrer_adress" />
+						<column name="num_adress" />
+						<column name="cp_adress" />
+						<column name="localitat_adress" />
+						<column name="provincia_adress" />
+						<column name="id_botiga" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-1d75" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Comanda Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="_id" type="-8" />
+						<var name="id_comanda" type="4" />
+						<var name="id_client" type="-8" />
+						<var name="id_botiga" type="-8" />
+						<var name="nom_botiga" />
+						<var name="date_comanda" />
+						<var name="tipus_comanda" />
+						<var name="pizzes_comanda" type="4" />
+						<var name="hamburgueses_comanda" type="4" />
+						<var name="begudes_comanda" type="4" />
+						<var name="preu_comanda" type="8" />
+						<var name="data_repartiment" />
+						<var name="id_empleat" type="-8" />
+						<var name="productos" type="4999545" />
+						<script ><![CDATA[pizzeria.comanda.find()]]></script>
+					</form_script>
+					<param name="i0" value="data_repartiment" />
+					<param name="width" value="100%" />
+					<param name="v0" value="preu_comanda" />
+					<param name="title" value="Sample Chart" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="_id" type="-8" />
+						<var name="id_comanda" type="4" />
+						<var name="id_client" type="-8" />
+						<var name="id_botiga" type="-8" />
+						<var name="nom_botiga" />
+						<var name="date_comanda" />
+						<var name="tipus_comanda" />
+						<var name="pizzes_comanda" type="4" />
+						<var name="hamburgueses_comanda" type="4" />
+						<var name="begudes_comanda" type="4" />
+						<var name="preu_comanda" type="8" />
+						<var name="data_repartiment" />
+						<var name="id_empleat" type="-8" />
+						<var name="productos" type="4999545" />
+						<script ><![CDATA[pizzeria.comanda.find()]]></script>
+					</form_script>
+					<cell type="label" name="_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="id_comanda" pos="1,0,1,0,c,c" />
+					<cell type="label" name="id_client" pos="2,0,2,0,c,c" />
+					<cell type="label" name="id_botiga" pos="3,0,3,0,c,c" />
+					<cell type="label" name="nom_botiga" pos="4,0,4,0,c,c" />
+					<cell type="label" name="date_comanda" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="${_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${id_comanda}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${id_client}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${id_botiga}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${nom_botiga}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${date_comanda}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-1d75" />
+				</tableview>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-1d75" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-1d75" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-1d75" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>

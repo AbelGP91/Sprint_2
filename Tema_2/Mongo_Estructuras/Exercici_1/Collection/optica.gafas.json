@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "64818508191b00750aee5718"
+  },
+  "id_gafas": 1,
+  "marca_gafas": "Northweek",
+  "graduacio1_gafas": 1,
+  "graduacio2_gafas": 1,
+  "montura_gafas": "Flotant",
+  "color1_gafas": "Negre",
+  "color2_gafas": "Negre",
+  "precio_gafas": 14.99,
+  "id_proveidor": {
+    "$oid": "64803dd1a8a3e6cf694f7eb1"
+  },
+  "nom_proveidor": "Optica Juan",
+  "ventas": [
+    {
+      "id_venta": 1,
+      "fecha_venta": "08/06/2023",
+      "id_cliente": {
+        "$oid": "64805b03a8a3e6cf694f7ed1"
+      },
+      "empleat": "Miguel Gomez Fernandez"
+    },
+    {
+      "id_venta": 3,
+      "fecha_venta": "08/06/2023",
+      "id_cliente": {
+        "$oid": "64805b03a8a3e6cf694f7ed2"
+      },
+      "empleat": "Juan Lopez Rodriguez"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64818508191b00750aee5719"
+  },
+  "id_gafas": 2,
+  "marca_gafas": "DCSquared",
+  "graduacio1_gafas": 1,
+  "graduacio2_gafas": 2,
+  "montura_gafas": "Pasta",
+  "color1_gafas": "Blau",
+  "color2_gafas": "Blau",
+  "precio_gafas": 49.99,
+  "id_proveidor": {
+    "$oid": "64803dd1a8a3e6cf694f7eb1"
+  },
+  "nom_proveidor": "Optica Juan",
+  "ventas": [
+    {
+      "id_venta": 2,
+      "fecha_venta": "08/06/2023",
+      "id_cliente": {
+        "$oid": "64805b03a8a3e6cf694f7ed2"
+      },
+      "empleat": "Miguel Gomez Fernandez"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "64818508191b00750aee571a"
+  },
+  "id_gafas": 3,
+  "marca_gafas": "Rayban",
+  "graduacio1_gafas": 2,
+  "graduacio2_gafas": 1,
+  "montura_gafas": "Metalica",
+  "color1_gafas": "Plata",
+  "color2_gafas": "Plata",
+  "precio_gafas": 119.99,
+  "id_proveidor": {
+    "$oid": "64803dd1a8a3e6cf694f7eb3"
+  },
+  "nom_proveidor": "No veo un pijo",
+  "ventas": [
+    {
+      "id_venta": 4,
+      "fecha_venta": "08/06/2023",
+      "id_cliente": {
+        "$oid": "64805b03a8a3e6cf694f7ed2"
+      },
+      "empleat": "Juan Lopez Rodriguez"
+    }
+  ]
+}]

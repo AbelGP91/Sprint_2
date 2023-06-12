@@ -1,0 +1,4 @@
+id_client,id_recomendado,nom_client,cognom1_client,cognom2_client,telf_client,email_client,Data_client
+1,,Abel,Galindo,Pascual,627297900,abel@hotmail.es,07/06/23
+2,,Juan,Polla,Sucia,627297901,jps@hotmail.es,07/06/23
+3,1,Juan,Polla,Limpia,627297902,jpl@hotmail.es,07/06/23

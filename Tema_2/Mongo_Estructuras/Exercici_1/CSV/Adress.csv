@@ -1,0 +1,7 @@
+id_adress,id_proveidor,id_client,carrer_adress,num_adress,pis_adress,porta_adress,ciutat_adress,cp_adress,pais_adress
+1,1,,Imaginario 1,111,,,Bcn,8292,Spain
+2,2,,Imaginario 2,112,,,Bcn,8292,Spain
+3,3,,Imaginario 3,121,,,Bcn,8292,Spain
+4,,1,Imaginario 4,211,,,Bcn,8292,Spain
+5,,2,Imaginario 5,122,,,Bcn,8292,Spain
+6,,3,Imaginario 6,212,,,Bcn,8292,Spain

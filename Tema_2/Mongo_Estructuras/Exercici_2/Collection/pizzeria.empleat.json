@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6486d45342f98ca4295d7b55"
+  },
+  "id_empleat": 1,
+  "id_botiga": {
+    "$oid": "6486cdaf42f98ca4295d7b1d"
+  },
+  "nom_empleat": "Fernando",
+  "cognom1_empleat": "Galindo",
+  "cognom2_empleat": "Pascual",
+  "nif_empleat": "46792494H",
+  "telf_empleat": 937774572,
+  "tipus_empleat": "Repartidor"
+}]

@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "6486cf4742f98ca4295d7b23"
+  },
+  "id_producto": 1,
+  "categoria_producte": "Mitjana",
+  "nom_producte": "Pizza Margarita",
+  "descripcio_producte": "Clásica",
+  "img_producte": "",
+  "preu_producte": 11.99
+},
+{
+  "_id": {
+    "$oid": "6486cf4742f98ca4295d7b24"
+  },
+  "id_producto": 2,
+  "categoria_producte": "Familiar",
+  "nom_producte": "Pizza Carbonara",
+  "descripcio_producte": "Contiene huevo",
+  "img_producte": "",
+  "preu_producte": 14.99
+},
+{
+  "_id": {
+    "$oid": "6486cf4742f98ca4295d7b25"
+  },
+  "id_producto": 3,
+  "categoria_producte": "",
+  "nom_producte": "Hamburguesa BBQ",
+  "descripcio_producte": "La de siempre",
+  "img_producte": "",
+  "preu_producte": 9.49
+},
+{
+  "_id": {
+    "$oid": "6486cf4742f98ca4295d7b26"
+  },
+  "id_producto": 4,
+  "categoria_producte": "",
+  "nom_producte": "Hamburguesa Dallas",
+  "descripcio_producte": "Con huevo y mostaza",
+  "img_producte": "",
+  "preu_producte": 9.99
+},
+{
+  "_id": {
+    "$oid": "6486cf4742f98ca4295d7b27"
+  },
+  "id_producto": 5,
+  "categoria_producte": "",
+  "nom_producte": "CocaCola",
+  "descripcio_producte": "",
+  "img_producte": "",
+  "preu_producte": 1.49
+},
+{
+  "_id": {
+    "$oid": "6486cf4742f98ca4295d7b28"
+  },
+  "id_producto": 6,
+  "categoria_producte": "",
+  "nom_producte": "Pepsi",
+  "descripcio_producte": "",
+  "img_producte": "",
+  "preu_producte": 1.49
+}]

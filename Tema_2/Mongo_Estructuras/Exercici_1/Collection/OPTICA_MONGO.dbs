@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MongoDb" id="Project-626" database="MongoDb" >
+	<schema name="optica" >
+		<table name="adress" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_adress" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="id_proveidor" type="objectId" length="800" decimal="0" jt="-8" />
+			<column name="carrer_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="num_adress" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="ciutat_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cp_adress" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="pais_adress" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="id_client" type="objectId" length="800" decimal="0" jt="-8" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="optica" to_table="client" >
+				<fk_column name="id_client" pk="_id" />
+			</fk>
+			<fk name="Relationship" virtual="y" to_schema="optica" to_table="proveïdors" >
+				<fk_column name="id_proveidor" pk="_id" />
+			</fk>
+		</table>
+		<table name="client" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_client" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="nom_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cognom1_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cognom2_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="telf_client" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="email_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="Data_client" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="id_recomendado" type="objectId" length="800" decimal="0" jt="-8" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="optica" to_table="client" >
+				<fk_column name="id_recomendado" pk="_id" />
+			</fk>
+		</table>
+		<table name="gafas" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_gafas" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="marca_gafas" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="graduacio1_gafas" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="graduacio2_gafas" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="montura_gafas" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="color1_gafas" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="color2_gafas" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="precio_gafas" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			<column name="id_proveidor" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="nom_proveidor" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="ventas" type="array[object]" length="800" decimal="0" jt="4999545" mandatory="y" >
+				<column name="id_venta" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+				<column name="fecha_venta" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="id_cliente" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+				<column name="empleat" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			</column>
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="optica" to_table="client" >
+				<fk_column name="ventas.id_cliente" pk="_id" />
+			</fk>
+			<fk name="Relationship" virtual="y" to_schema="optica" to_table="proveïdors" >
+				<fk_column name="id_proveidor" pk="_id" />
+			</fk>
+		</table>
+		<table name="proveïdors" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="id_proveidor" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="nom_proveidor" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="telf_proveidor" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="fax_proveidor" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="nif_proveidor" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+		</table>
+	</schema>
+	<connector name="MongoDb" database="MongoDb" driver_class="com.wisecoders.dbschema.mongodb.JdbcDriver" driver_jar="mongojdbc4.8.1.jar" driver_desc="No Authentication" host="localhost" port="27017" instance="optica" user="admin" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-4be" confirmed="y" show_relation="name" >
+		<entity schema="optica" name="adress" color="C7F4BE" x="352" y="480" />
+		<entity schema="optica" name="client" color="BEBEF4" x="304" y="80" />
+		<entity schema="optica" name="gafas" color="BED3F4" x="560" y="80" />
+		<entity schema="optica" name="proveïdors" color="F4DDBE" x="48" y="416" />
+		<entity schema="optica" name="gafas" column="ventas" color="BED3F4" x="592" y="384" />
+		<group name="Collection &#039;adress&#039;" color="EEF7EC" >
+			<entity schema="optica" name="adress" />
+		</group>
+		<group name="Collection &#039;proveïdors&#039;" color="F7F2EC" >
+			<entity schema="optica" name="proveïdors" />
+		</group>
+		<group name="Collection &#039;client&#039;" color="ECECF7" >
+			<entity schema="optica" name="client" />
+		</group>
+		<group name="Collection &#039;ventas&#039;" color="ECF0F7" >
+			<entity schema="optica" name="gafas" />
+			<entity schema="optica" name="gafas" column="ventas" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-2708" confirmed="y" show_column_type="y" show_relation="name" >
+		<entity schema="optica" name="adress" color="C7F4BE" x="320" y="416" />
+		<entity schema="optica" name="client" color="BEBEF4" x="320" y="80" />
+		<entity schema="optica" name="gafas" color="BED3F4" x="624" y="80" />
+		<entity schema="optica" name="proveïdors" color="F4DDBE" x="48" y="416" />
+		<entity schema="optica" name="gafas" column="ventas" color="BED3F4" x="624" y="368" />
+		<group name="adress" color="EEF7EC" >
+			<entity schema="optica" name="adress" />
+		</group>
+		<group name="proveïdors" color="F7F2EC" >
+			<entity schema="optica" name="proveïdors" />
+		</group>
+		<group name="client" color="ECECF7" >
+			<entity schema="optica" name="client" />
+		</group>
+		<group name="ventas" color="ECF0F7" >
+			<entity schema="optica" name="gafas" column="ventas" />
+			<entity schema="optica" name="gafas" />
+		</group>
+		<script name="Query Editor" id="Editor-1e3f" language="SQL" >
+			<string><![CDATA[optica.client.find()
+
+//OR
+
+USE optica;
+db.client.find()
+
+//OR
+
+USE optica;
+db.getCollection('client').find()]]></string>
+		</script>
+		<browser id="Browse-2369" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="optica" entity="client" x="20" y="20" width="400" height="300" record_view="y" >
+				<browse_table schema="optica" entity="adress" fk="Relationship" x="440" y="20" width="500" height="350" record_view="y" >
+					<browse_table schema="optica" entity="client" fk="Relationship" x="960" y="20" width="500" height="350" record_view="y" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-8be" name="Query Builder" >
+			<query_table schema="optica" name="client" alias="client" x="48" y="48" >
+				<column name="_id" />
+				<column name="id_client" />
+				<column name="nom_client" />
+				<column name="cognom1_client" />
+				<column name="cognom2_client" />
+				<column name="telf_client" />
+				<column name="email_client" />
+				<column name="Data_client" />
+				<column name="id_recomendado" />
+				<query_table schema="optica" name="adress" alias="adress" x="272" y="48" fk="Relationship" type="Inner Join" >
+					<column name="_id" />
+					<column name="id_adress" />
+					<column name="id_proveidor" />
+					<column name="carrer_adress" />
+					<column name="num_adress" />
+					<column name="ciutat_adress" />
+					<column name="cp_adress" />
+					<column name="pais_adress" />
+					<column name="id_client" />
+					<query_table schema="optica" name="client" alias="proveïdors" x="480" y="48" fk="Relationship" type="Inner Join" >
+						<column name="_id" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-b5d" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Client Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="_id" type="-8" />
+						<var name="id_client" type="4" />
+						<var name="nom_client" type="-1" />
+						<var name="cognom1_client" type="-1" />
+						<var name="cognom2_client" type="-1" />
+						<var name="telf_client" type="4" />
+						<var name="email_client" type="-1" />
+						<var name="Data_client" type="-1" />
+						<var name="id_recomendado" type="-8" />
+						<script ><![CDATA[optica.client.find()]]></script>
+					</form_script>
+					<param name="i0" value="Data_client" />
+					<param name="width" value="100%" />
+					<param name="v0" value="telf_client" />
+					<param name="title" value="Sample Chart" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="_id" type="-8" />
+						<var name="id_client" type="4" />
+						<var name="nom_client" type="-1" />
+						<var name="cognom1_client" type="-1" />
+						<var name="cognom2_client" type="-1" />
+						<var name="telf_client" type="4" />
+						<var name="email_client" type="-1" />
+						<var name="Data_client" type="-1" />
+						<var name="id_recomendado" type="-8" />
+						<script ><![CDATA[optica.client.find()]]></script>
+					</form_script>
+					<cell type="label" name="_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="id_client" pos="1,0,1,0,c,c" />
+					<cell type="label" name="nom_client" pos="2,0,2,0,c,c" />
+					<cell type="label" name="cognom1_client" pos="3,0,3,0,c,c" />
+					<cell type="label" name="cognom2_client" pos="4,0,4,0,c,c" />
+					<cell type="label" name="telf_client" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="${_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${id_client}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${nom_client}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${cognom1_client}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${cognom2_client}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${telf_client}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-b5d" />
+				</tableview>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-b5d" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-b5d" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-b5d" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>

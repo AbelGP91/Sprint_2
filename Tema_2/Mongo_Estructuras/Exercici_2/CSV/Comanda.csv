@@ -1,0 +1,2 @@
+id_comanda,id_client,id_botiga,date_comanda,tipus_comanda,pizzes_comanda,hamburgueses_comanda,begudes_comanda,preu_comanda,productes
+1,1,1,12/06/23,domicili,0,2,2,24.99,
